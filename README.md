@@ -9,6 +9,7 @@ I'm using Google's Open Images dataset as an initial set of images to load and e
 cmd-line setup:
 
 > pip install fiftyone
+
 > fiftyone config
 
 I did this in Google's Colab, and you can download the output afterwards yourself. The images are outputted directly to /validation/data/
