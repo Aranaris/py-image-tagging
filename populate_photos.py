@@ -1,11 +1,12 @@
-import pandas as pd
-import pathlib
 import json
+import pathlib
 from datetime import datetime
 
-label_df = pd.read_csv("/Users/vinceye/fiftyone/open-images-v6/validation/metadata/classes.csv", header=None)
-images_df = pd.read_csv("/Users/vinceye/fiftyone/open-images-v6/validation/metadata/image_ids.csv")
-classifications_df = pd.read_csv("/Users/vinceye/fiftyone/open-images-v6/validation/labels/detections.csv")
+import pandas as pd
+
+label_df = pd.read_csv('/Users/vinceye/fiftyone/open-images-v6/validation/metadata/classes.csv', header=None)
+images_df = pd.read_csv('/Users/vinceye/fiftyone/open-images-v6/validation/metadata/image_ids.csv')
+classifications_df = pd.read_csv('/Users/vinceye/fiftyone/open-images-v6/validation/labels/detections.csv')
 
 images_obj = {
     'images': [],
@@ -28,10 +29,10 @@ for filename in pathlib.Path('/Users/vinceye/fiftyone/open-images-v6/validation/
     tag_obj = {
         'image': image_id,
         'tags': tag_list,
-        'created': now.strftime("%Y-%m-%d %H:%M:%S"),
+        'created': now.strftime('%Y-%m-%d %H:%M:%S'),
     }
 
     images_obj['images'].append(tag_obj)
 
-with open("./sample.json", "w") as outfile:
-    json.dump(images_obj, outfile, indent="\t")
+with open('./sample.json', 'w') as outfile:
+    json.dump(images_obj, outfile, indent='\t')

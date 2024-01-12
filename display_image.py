@@ -1,7 +1,8 @@
-from tkinter import *
-from PIL import ImageTk, Image
 import pathlib
 import time
+from tkinter import Button, Canvas, Tk
+
+from PIL import Image, ImageTk
 
 class Window:
 	def __init__(self, width, height) -> None:
@@ -52,12 +53,12 @@ class Window:
 	def next_image(self):
 		if self.image_index < len(self.images) - 1:
 			next_index = self.image_index + 1
-		self.display_image(next_index)
+			self.display_image(next_index)
 
 	def previous_image(self):
 		if self.image_index > 0:
 			next_index = self.image_index - 1
-		self.display_image(next_index)
+			self.display_image(next_index)
 
 def main():
 	win = Window(1000, 800)
